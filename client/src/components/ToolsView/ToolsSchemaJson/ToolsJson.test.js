@@ -18,7 +18,7 @@ describe("ToolsView/ToolsView.vue", () => {
         await Vue.nextTick();
     });
 
-    it("schema.org script element is created", async () => {
+    it("schema.org  script element is created", async () => {
         await Vue.nextTick();
         const tools = wrapper.vm.createToolsJson(testToolsListResponse);
         const schemaElement = document.getElementById("schema-json");

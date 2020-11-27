@@ -35,7 +35,7 @@ def parse_tests(tool, tests_source):
     return tests
 
 
-def description_from_tool_object(tool, test_index, raw_test_dict):
+def description_from_tool_object(tool,  test_index, raw_test_dict):
     required_files = []
     required_data_tables = []
     required_loc_files = []

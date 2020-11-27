@@ -17,9 +17,9 @@ jobs:
     steps:
     - name: Assign Milestone
       env:
-       MILESTONE: "20.01"
+       MILESTONE: 20.01
       run: |
         curl --request PATCH \
         --url ${{ github.event.pull_request.issue_url }} \
         --header 'authorization: token ${{ secrets.GITHUB_TOKEN }}' \
-        --data '{"milestone": $MILESTONE}'
+        --data '{"milestone": "$MILESTONE"}'

@@ -120,6 +120,63 @@ class ToolFormTestCase(SeleniumTestCase, UsesHistoryItemAssertions):
         assert latest_hda["name"] == "Select first on data 1"
 
     @selenium_test
+    def test_drag_n_drop(self):
+        self.home()
+        self._run_environment_test_tool(inttest_value="43")
+        self.history_panel_wait_for_hid_ok(1)
+
+        self._run_environment_test_tool()
+        self.history_panel_wait_for_hid_ok(2)
+
+        self.tool_open("gzipped_inputs")
+
+        item_component = self.history_panel_item_component(hid=1)
+
+        self.history_item_wait_for(item_component, 1)
+
+        dataset_title = item_component.title.wait_for_visible()
+        tool_form_input = self.driver.find_element_by_css_selector(".ui-select-content")
+        self.action_chains().click_and_hold(dataset_title).move_to_element_with_offset(
+            tool_form_input, 10, 25).pause(2).release().perform()
+
+        # tool_form_input = self.components.tool_form.select_content.wait_for_visible()
+        # ac = self.action_chains().drag_and_drop(dataset_title, tool_form_input).perform()
+        #
+        # self.action_chains().click_and_hold(dataset_title).pause(4).move_to_element(tool_form_input).pause(4).perform()
+
+        # self.action_chains().move_to_element(dataset_title).pause(1).click_and_hold(dataset_title).pause(4).move_by_offset(x, y).move_to_element(tool_form_input).move_by_offset(x,y).pause(4).release().perform()
+
+        #
+
+
+        # self.highlight(dataset_title, "blue", 5)
+        # self.highlight(tool_form_input, "blue", 5)
+
+        # self.action_chains().context_click(tool_form_input).perform()
+
+        self.screenshot("drag_n_drop_dataset")
+
+        # self.tool_form_execute()
+
+        # assert 0!=0
+        # for i in range(9999):
+        #    self.sleep_for(self.wait_types.UX_TRANSITION)
+
+
+
+
+
+    def highlight(self, element, color, border):
+        """Highlights (blinks) a Selenium Webdriver element"""
+        driver = element._parent
+
+        def apply_style(s):
+            driver.execute_script("arguments[0].setAttribute('style', arguments[1]);",
+                                  element, s)
+
+        apply_style("border: {0}px solid {1};".format(border, color))
+
+    @selenium_test
     def test_bibtex_rendering(self):
         self.home()
         # prefetch citations so they will be available quickly when rendering tool form.

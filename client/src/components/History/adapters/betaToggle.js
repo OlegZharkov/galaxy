@@ -1,13 +1,13 @@
 export const isBetaHistoryOpen = () => {
-    return sessionStorage.getItem("useBetaHistory");
+    return !sessionStorage.getItem("useLegacyHistory");
 };
 
 export const switchToLegacyHistoryPanel = () => {
-    sessionStorage.removeItem("useBetaHistory");
+    sessionStorage.setItem("useLegacyHistory", 1);
     location.reload();
 };
 
 export const switchToBetaHistoryPanel = () => {
-    sessionStorage.setItem("useBetaHistory", 1);
+    sessionStorage.removeItem("useLegacyHistory");
     location.reload(false);
 };

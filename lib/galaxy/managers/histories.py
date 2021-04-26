@@ -5,7 +5,6 @@ Histories are containers for datasets or dataset collections
 created (or copied) by users over the course of an analysis.
 """
 import logging
-from typing import Optional
 
 from sqlalchemy import (
     asc,
@@ -22,7 +21,6 @@ from galaxy.managers import (
     history_contents,
     sharable
 )
-from galaxy.schema.fields import EncodedDatabaseIdField
 from galaxy.structured_app import MinimalManagerApp
 
 log = logging.getLogger(__name__)
@@ -490,9 +488,3 @@ class HistoriesService:
         self.shareable_service = sharable.ShareableService(self.manager, self.serializer)
 
     # TODO: add the rest of the API actions here and call them directly from the API controller
-
-    def sharing(self, trans, id: EncodedDatabaseIdField, payload: Optional[sharable.SharingPayload] = None) -> sharable.SharingStatus:
-        """Allows to publish or share with other users the given resource (by id) and returns the current sharing
-        status of the resource.
-        """
-        return self.shareable_service.sharing(trans, id, payload)

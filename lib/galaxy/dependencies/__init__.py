@@ -236,6 +236,7 @@ class ConditionalDependencies:
         return (self.config['watch_tools'] in install_set
                 or self.config['watch_tool_data_dir'] in install_set)
 
+
     def check_docker(self):
         return (self.config.get("enable_beta_containers_interface", False)
                 and ('docker' in self.container_interface_types

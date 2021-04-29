@@ -9,6 +9,8 @@
         @undelete="onUndelete"
         @unhide="onUnhide"
         @copy-link="onCopyLink"
+        :id="`dataset-${dataset.id}`"
+        :class="`state-${dataset.state}`"
     />
 </template>
 

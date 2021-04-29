@@ -25,6 +25,7 @@ from .has_driver import (
     TimeoutException,
 )
 from .smart_components import SmartComponent
+from selenium.common.exceptions import NoSuchElementException
 
 # Test case data
 DEFAULT_PASSWORD = '123456'
@@ -1342,7 +1343,11 @@ class NavigatesGalaxy(HasDriver):
     def history_panel_click_item_title(self, hid, **kwds):
         item_component = self.history_panel_item_component(hid=hid)
         details_component = item_component.details
-        details_displayed = details_component.is_displayed
+        try:
+            details_displayed = details_component.is_displayed
+        except NoSuchElementException:
+            details_displayed = False
+
         item_component.title.wait_for_and_click()
 
         if kwds.get("wait", False):

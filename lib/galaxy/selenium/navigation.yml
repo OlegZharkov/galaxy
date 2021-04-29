@@ -117,7 +117,7 @@ history_panel:
       name: '${_} .name'
       details: '${_} .details'
       title_button_area: '${_} .primary-actions'
-      primary_action_buttons: '${_} .actions .left'
+      primary_action_buttons: '${_} .actions'
       secondary_action_buttons: '${_} .actions .right'
       summary: '${_} .summary'
       blurb: '${_} .blurb .value'

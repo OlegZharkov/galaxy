@@ -16,7 +16,7 @@ either through the props, and make updates through the events -->
     >
         <!-- name, state buttons, menus -->
         <nav
-            class="content-top-menu d-flex align-items-center justify-content-between"
+            class="content-top-menu d-flex align-items-center justify-content-between title"
             @click.stop="$emit('update:expanded', !expanded)"
         >
             <div class="d-flex mr-1 align-items-center" @click.stop>

@@ -1,5 +1,5 @@
 <template>
-    <div class="priority-menu">
+    <div class="priority-menu actions">
         <!-- primary menu, wraps each item in a LI for the flexbox and
         puts an intersect around the whole thing to monitor menu items coming
         and going -->

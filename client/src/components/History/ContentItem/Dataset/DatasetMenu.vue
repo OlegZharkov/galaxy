@@ -102,7 +102,7 @@
                     job_id: dataset.creating_job,
                 })
             "
-            icon="fa fa-refresh"
+            icon="fa fa-refresh icon-btn rerun-btn"
         />
 
         <PriorityMenuItem

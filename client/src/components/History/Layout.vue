@@ -4,7 +4,7 @@ amateur-hour baby-tool like Bootstrap instead of taking the afternoon
 to learn how CSS is supposed to work. -->
 
 <template>
-    <section class="history d-flex flex-column">
+    <section id="current-history-panel" class="history d-flex flex-column">
         <header class="p-2">
             <!-- optional slot for injecting global navigation -->
             <nav v-if="$slots.nav" class="top-nav pb-2">

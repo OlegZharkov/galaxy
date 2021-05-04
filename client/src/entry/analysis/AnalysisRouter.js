@@ -200,8 +200,8 @@ export const getAnalysisRouter = (Galaxy) => {
         show_visualizations_sharing: function () {
             this._display_vue_helper(Sharing, {
                 id: QueryStringParsing.get("id"),
-                plural_name: "Visualizations",
-                model_class: "Visualization",
+                pluralName: "Visualizations",
+                modelClass: "Visualization",
             });
         },
 
@@ -256,8 +256,8 @@ export const getAnalysisRouter = (Galaxy) => {
         show_histories_sharing: function () {
             this._display_vue_helper(Sharing, {
                 id: QueryStringParsing.get("id"),
-                plural_name: "Histories",
-                model_class: "History",
+                pluralName: "Histories",
+                modelClass: "History",
             });
         },
 
@@ -334,8 +334,8 @@ export const getAnalysisRouter = (Galaxy) => {
         show_pages_sharing: function () {
             this._display_vue_helper(Sharing, {
                 id: QueryStringParsing.get("id"),
-                plural_name: "Pages",
-                model_class: "Page",
+                pluralName: "Pages",
+                modelClass: "Page",
             });
         },
 
